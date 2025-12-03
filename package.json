@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "postinstall": "apt-get update && apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "aframe": "^1.7.1",
-    "mind-ar": "^1.2.5"
+    "mind-ar": "^1.2.5",
+    "canvas": "^2.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

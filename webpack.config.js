@@ -42,6 +42,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin"); // <-- add this
 
 module.exports = {
   mode: "production",
@@ -62,11 +63,11 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|jpeg|gif|webp)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "images/[name][ext]",
-        },
+      test: /\.(png|jpg|jpeg|gif|webp)$/i,
+      type: "asset/resource",
+      generator: {
+        filename: "images/[name][ext]",  // all images go to build/images/
+      },
       },
     ],
   },
@@ -85,6 +86,11 @@ module.exports = {
       template: path.resolve(__dirname, "index.html"),
       filename: "index.html",
       inject: "body",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/images", to: "images" }, // copies everything from src/images -> build/images
+      ],
     }),
   ],
 

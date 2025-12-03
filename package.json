@@ -2,25 +2,22 @@
   "name": "enervonc",
   "version": "1.0.0",
   "private": true,
-
   "engines": {
     "node": "20.x"
   },
-
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
-
   "dependencies": {
     "aframe": "^1.7.1",
     "mind-ar": "^1.2.5"
   },
-
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "file-loader": "^6.2.0",

@@ -1,3 +1,4 @@
+import "./style.css"
 document.addEventListener("DOMContentLoaded", function () {
   const focusFrame = document.querySelector(".focus-frame");
 

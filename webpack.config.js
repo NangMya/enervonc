@@ -60,6 +60,7 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+
       {
         test: /\.(png|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
@@ -83,6 +84,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html"),
       filename: "index.html",
+      inject: "body",
     }),
   ],
 

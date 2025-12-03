@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       center_medicine.setAttribute(
         "animation__move_curve3",
-        "property: position; from: 0.4 0.22 0.35; to: 0.5 0.32 0.4; dur: 200; delay: 84000; easing: easeInOutSine;"
+        "property: position; from: 0.4 0.22 0.35; to: 0.5 0.32 0.4; dur: 200; delay: 8400; easing: easeInOutSine;"
       );
 
       center_medicine.setAttribute(

@@ -90,6 +90,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/images", to: "images" }, // copies everything from src/images -> build/images
+        { from: "src/patt", to: "patt" }, // copies everything from src/images -> build/images
       ],
     }),
   ],

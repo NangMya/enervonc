@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "24.x"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "postinstall": "apt-get update && apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev"
+    "start": "node index.js",
+    "postinstall": "apt-get update && apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",

@@ -1,147 +1,168 @@
 <html>
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <title>Enervon C - AR</title>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    
-  </head>
-  <body>
-    <div class="focus-frame">
-      <div class="corner top-left"></div>
-      <div class="corner top-right"></div>
-      <div class="corner bottom-left"></div>
-      <div class="corner bottom-right"></div>
-      <div class="scanning-line"></div>
-    </div>
-    <a-scene
-      mindar-image="imageTargetSrc: /patt/multi_targets.mind;"
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-      fps="60"
-    >
-      <a-assets>
-        <img id="envc_img" src="images/envc.png" />
-        <img id="arrow1" src="images/arrow1.png" />
-        <img id="arrow2" src="images/arrow2.png" />
-        <img id="arrow3" src="images/arrow3.png" />
-        <img id="center" src="images/center_medicine.png" />
-        <img id="man_img" src="images/man.png" />
-        <img id="text_img" src="images/text.png" />
-      </a-assets>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Enervon C</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+        <!-- <script src="../node_modules/mind-ar/dist/mindar-image-aframe.prod.js"></script> -->
+<!-- <script src="https://unpkg.com/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <!-- <script src="/node_modules/mind-ar/dist/mindar-image-aframe.prod.js"></script> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+     
+  </head>
+  <body>
+    <div class="focus-frame">
+      <div class="corner top-left"></div>
+      <div class="corner top-right"></div>
+      <div class="corner bottom-left"></div>
+      <div class="corner bottom-right"></div>
+      <div class="scanning-line"></div>
+    </div>
+    <a-scene
+      mindar-image="imageTargetSrc: /patt/multi_targets.mind;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+      fps="60"
+    >
+      <a-assets>
+         
+        <img id="envc_img" src="images/envc.png" />
+        <img id="arrow1" src="images/arrow1.png" />
+        <img id="arrow2" src="images/arrow2.png" />
+        <img id="arrow3" src="images/arrow3.png" />
+        <img id="center" src="images/center_medicine.png" />
+        <img id="man_img" src="images/man.png" />
+        <img id="text_img" src="images/text.png" />
+      </a-assets>
 
-      <a-entity id="cameraRig">
-        <a-camera
-          id="camera"
-          position="0 0 0"
-          look-controls="enabled: false"
-        ></a-camera>
-      </a-entity>
+      <a-entity id="cameraRig">
+        <a-camera
+          id="camera"
+          position="0 0 0"
+          look-controls="enabled: false"
+        ></a-camera>
+      </a-entity>
 
-      <a-entity
-        mindar-image-target="targetIndex: 0"
-        id="smallTarget"
-        position="0 0 -2"
-      >
-                <a-image
-          id="envc"
-          src="#envc_img"
-          scale="1.1 0.7 1"
-          rotation="0 0 0"
-          position="0 0 0.05"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
+      <a-entity
+        mindar-image-target="targetIndex: 0"
+        id="smallTarget"
+        position="0 0 -2"
+      >
+        <a-image
+          id="envc"
+          src="#envc_img"
+          scale="1.1 0.7 1"
+          rotation="0 0 0"
+          position="0 0 0"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
 
-                <a-image
-          id="image1"
-          src="#arrow1"
-          scale="0.25 0.65 0.2"
-          rotation="0 0 0"
-          position="0 0.75 0.2"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
-        <a-image
-          id="image2"
-          src="#arrow2"
-          scale="0.35 0.65 0.2"
-          rotation="30 330 0"
-          position="-0.45 0.7 0.15"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
+        <a-image
+          id="image1"
+          src="#arrow1"
+          scale="0.25 0.65 0.2"
+          rotation="0 0 0"
+          position="0 0.75 0.1"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
+        <a-image
+          id="image2"
+          src="#arrow2"
+          scale="0.35 0.65 0.2"
+          rotation="30 330 0"
+          position="-0.45 0.7 0.1"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
 
-        <a-image
-          id="image3"
-          src="#arrow3"
-          scale="0.28 0.82 0.2"
-          rotation="330 30 0"           position="0.45 0.72 0.1"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
+        <a-image
+          id="image3"
+          src="#arrow3"
+          scale="0.28 0.82 0.2"
+          rotation="330 330 0"
+          position="0.45 0.72 0.05"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
 
-                <a-image
-          id="center_medicine"
-          src="#center"
-          scale="0.5 0.2 0.5"           rotation="0 0 0"
-          position="0 0.06 0.25"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
-                <a-image
-          id="man"
-          src="#man_img"
-          scale="0.7 0.7 0.7"
-          rotation="0 0 0"
-          position="0 0.58 0.3"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        >
-        </a-image>
-                <a-image
-          id="text"
-          src="#text_img"
-          scale="0.9 0.6 0.6"
-          rotation="0 0 0"
-          position="0 1.2 0.35"           opacity="0"
-          loading="lazy"
-          look-at="#camera"
-        ></a-image>
-        
-                <a-plane
-          look-at="#camera"
-          width="0.7"           height="0.25"           color="#FF7903"
-          scale="1 1 1"
-          rotation="0 0 0"
-          class="clickable"
-          id="ctaButton"
-          opacity="0"
-          position="0 -0.55 0.35"           material="src: url(/images/btn_bg.png); transparent: true"
-          animation="property: material.color; from: #FF7903; to: #F22408; dur: 1000; dir: alternate; loop: true"
-        >
-          <a-text
-            value="Learn More!"
-            align="center"
-            position="0 0 0.01"             color="#FFFFFF"
-            width="1.5"
-            opacity="0"
-            id="learnMore"
-          ></a-text>
-        </a-plane>
-      </a-entity>
+        <a-image
+          id="center_medicine"
+          src="#center"
+          scale="0.53 0.2 0.1"
+          rotation="0 0 0"
+          position="0.01 0.06 0.2"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
+        <a-image
+          id="man"
+          src="#man_img"
+          scale="0.7 0.7 0.7"
+          rotation="0 0 0"
+          position="0 0.58 0.2"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        >
+        </a-image>
+        <a-image
+          id="text"
+          src="#text_img"
+          scale="0.9 0.6 0.6"
+          rotation="0 0 0"
+          position="0 1.2 0.2"
+          opacity="0"
+          loading="lazy"
+          look-at="#camera"
+        ></a-image>
+        <a-plane
+          look-at="#camera"
+          width="0.5"
+          height="0.2"
+          color="#FF7903"
+          scale="1.1 1 1"
+          rotation="0 0 0"
+          class="clickable"
+          id="ctaButton"
+          opacity="0"
+          position="0 -0.55 0"
+          material="src: url(/images/btn_bg.png); transparent: true"
+          animation="property: material.color; from: #FF7903; to: #F22408; dur: 1000; dir: alternate; loop: true"
+        >
+          <a-text
+            value="Learn More!"
+            align="center"
+            position="0 0 0"
+            color="#FFFFFF"
+            width="1"
+            opacity="0"
+            id="learnMore"
+          ></a-text>
+        </a-plane>
+      </a-entity>
 
-      <mindar-image
-        image-target-quality="low"
-        resolution="low"
-        autostart="true"
-      ></mindar-image>
-    </a-scene>
-    <script src="bundle.js"></script>
-  </body>
+      <mindar-image
+        image-target-quality="low"
+        resolution="low"
+        autostart="true"
+      ></mindar-image>
+    </a-scene>
+    <script src="bundle.js"></script>
+    <!-- <script src="animate.js"></script> -->
+    <!-- <script src="/build/bundle.js"></script> -->
+    <!-- <script src="https://ar.dkmads.com/enervonc/build/bundle.js"></script> -->
+  </body>
 </html>
